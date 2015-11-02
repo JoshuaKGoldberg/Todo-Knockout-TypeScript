@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>To-do - Knockout</title>
+</head>
+<body>
+    <div id="todoapp">
+        <input id="input-text" placeholder="Insert text here" autofocus data-bind="value: textAddValue, valueEnter: addTodo">
+        <input id="input-button" type="button" value="Add" data-bind="click: addTodo" />
+        <input id="input-clear" type="button" value="Clear" data-bind="click: clearTodos" />
+        <div id="todos-list">
+            <h4>Incomplete</h4>
+            <div id="todos-incomplete" data-bind="foreach: todosIncomplete">
+                <div data-bind="id: timestamp" class="view">
+                    <input class="toggle" type="checkbox" data-bind="checked: completed" />
+                    <label data-bind="text: text"></label>
+                </div>
+            </div>
+            <h4>Completed</h4>
+            <div id="todos-incomplete" data-bind="foreach: todosCompleted">
+                <div data-bind="id: timestamp" class="view">
+                    <input class="toggle" type="checkbox" data-bind="checked: completed" />
+                    <label data-bind="text: text"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/lib/jquery-1.11.3.js"></script>
+    <script src="js/lib/knockout-3.3.0.js"></script>
+
+    <script src="js/todo-knockout/models.js"></script>
+    <script src="js/todo-knockout/views.js"></script>
+    <script src="js/todo-knockout/app.js"></script>
+</body>
+</html>
